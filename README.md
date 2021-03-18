@@ -85,8 +85,8 @@ python 3.6+
 6. Once in above dir 
     ```scrapy crawl university```
 7. After scraping done, use desire browser like chrome/firefox/safari etc. and search for
-    Former Name using ```http://localhost:9200/universities/_search?pretty&filter_path=hits.hits._source&q=former_name:"Birmingham Polytechnic"```
-    or Current Name using ```http://localhost:9200/universities/_search?pretty&filter_path=hits.hits._source&q=current_name:"Birmingham City University"```
+    Former Name(GET API) using ```http://localhost:9200/universities/_search?pretty&filter_path=hits.hits._source&q=former_name:"Birmingham Polytechnic"```
+    or Current Name(GET API) using ```http://localhost:9200/universities/_search?pretty&filter_path=hits.hits._source&q=current_name:"Birmingham City University"```
     
 ### Time Complexity
 Scrapy took around 8 seconds to scrape all 134 university data.
