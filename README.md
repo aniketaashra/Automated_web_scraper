@@ -94,7 +94,7 @@ Searching was done in miliseconds on elasticsearch.
 
 ### Schema to optimize search 
  refer Db Design Search.jpg file for class diagram or 
- [!Db](Db%20Design%20Search.jpg)
-
+ [!Db](https://github.com/saurabh9997/Scraping_university_data/blob/master/Db%20Design%20Search.jpg?raw=true)
+ 
 
 
