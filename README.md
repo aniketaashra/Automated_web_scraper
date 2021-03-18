@@ -1,4 +1,4 @@
-# *Scraping_university_data*
+# *Scraping university data*
 ## *Problem Statement*
 ### *Building a repository of universities of UK*
 1. Write a scraper to scrape the information about all the universities based out of UK from Wikipedia: https://en.wikipedia.org/wiki/List_of_universities_in_England 
@@ -17,28 +17,28 @@
 
 ## *Solution*
 
-#####Scrapy :
+##### Scrapy :
 An open source and collaborative framework for extracting the data you need from websites.
 In a fast, simple, yet extensible way.
-######Installation :
+###### Installation :
 ```pip install scrapy```
 
-#####Elastic Search :
+##### Elastic Search :
 Elasticsearch is a distributed, free and open search and analytics engine for all types of data, including textual, numerical, geospatial, structured, and unstructured.
-######Installation :
+###### Installation :
 Please refer ```https://www.elastic.co/downloads/elasticsearch```
 
-#####ScrapyElasticSearch :
+##### ScrapyElasticSearch :
 Scrapy-ElasticSearch is a pipeline which allows Scrapy objects to be sent directly to ElasticSearch
-######Installation :
+###### Installation :
 ```pip install ScrapyElasticSearch```
 
-####Libraries to be installed :
+#### Libraries to be installed :
 For Scrapy ```pip install scrapy```
 
 For ScrapyElasticSearch ```pip install ScrapyElasticSearch```
 
-#####*Why we use scrapy to scrape the websites ?*
+##### *Why we use scrapy to scrape the websites ?*
 1. Scrapy enables you to easily post-process any data you find. Data on the web is a mess! It is very unlikely that the data you find will be in the exact format that you would like it to be: it may have extra line breaks; funky styling; extra commas in random places; or simply be in all upper case. Scrapy will let you handle these cases in a straight forward fashion.
 
 2. Data can often be incomplete in the wild - if you are writing your own script you will have to try doubly hard to ensure it is resilient to these cases. Scrapy will make the process of working around incomplete data much easier for you.
@@ -54,7 +54,7 @@ For ScrapyElasticSearch ```pip install ScrapyElasticSearch```
 7. Scrapy can do multiple requests at the same time which allows scraping runs to be much faster. If you are writing a Python script from scratch that tries to do that, you will likely find that things can go wrong in a horrible million ways. Scrapy has years of use in actual large organisations that avoid this.
 
 
-#####*How can we connect scrapy with elasticsearch ?*
+##### *How can we connect scrapy with elasticsearch ?*
 In Settings.py file add below line's
 ```
 ITEM_PIPELINES = [
@@ -70,10 +70,10 @@ ELASTICSEARCH_TYPE = 'university'
 ELASTICSEARCH_UNIQ_KEY = 'url'
 ```
 
-###Sytem Requirement 
+### System Requirement 
 python 3.6+
 
-###Steps to run the program and get the desired output :
+### Steps to run the program and get the desired output :
 1. Run the ElasticSearch In the background
 2. Clone the repo 
     ```https://github.com/saurabh9997/Scraping_university_data.git```
@@ -88,11 +88,11 @@ python 3.6+
     Former Name using ```http://localhost:9200/universities/_search?pretty&filter_path=hits.hits._source&q=former_name:"Birmingham Polytechnic"```
     or Current Name using ```http://localhost:9200/universities/_search?pretty&filter_path=hits.hits._source&q=current_name:"Birmingham City University"```
     
-###Time Complexity
+### Time Complexity
 Scrapy took around 8 seconds to scrape all 134 university data.
 Searching was done in miliseconds on elasticsearch.
 
-###Schema to optimize search 
+### Schema to optimize search 
  refer Db Design Search.jpg file for class diagram
 
 
