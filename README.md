@@ -93,7 +93,8 @@ Scrapy took around 8 seconds to scrape all 134 university data.
 Searching was done in miliseconds on elasticsearch.
 
 ### Schema to optimize search 
- refer Db Design Search.jpg file for class diagram
+ refer Db Design Search.jpg file for class diagram or 
+ [!Db](Db%20Design%20Search.jpg)
 
 
 
