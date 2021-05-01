@@ -89,12 +89,25 @@ COOKIES_ENABLED = False
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 ITEM_PIPELINES = {
-  'scrapyelasticsearch.scrapyelasticsearch.ElasticSearchPipeline':100,
-  'universities.pipelines.UniversitiesPipeline': 300,
+  # 'scrapyelasticsearch.scrapyelasticsearch.ElasticSearchPipeline':100,
+  # 'universities.pipelines.UniversitiesPipeline': 300,
+  'universities.pipelines.S3Pipeline': 1,
 }
+AWS_ACCESS_KEY_ID = 'put_your_credentials'
+AWS_SECRET_ACCESS_KEY = 'put_your_credentials'
 
-ELASTICSEARCH_SERVER = '127.0.0.1'
-ELASTICSEARCH_PORT = 9200
-ELASTICSEARCH_INDEX = 'universities'
-ELASTICSEARCH_TYPE = 'university'
-ELASTICSEARCH_UNIQ_KEY = 'url'
+# You need to have both variables FEED_URI and S3PIPELINE_URL set to the same
+# file or this code will not work.
+FEED_URI = 's3://webscrapy/data/result.jsonl'
+S3PIPELINE_URL = FEED_URI
+FEED_FORMAT = 'jsonlines'
+
+# project_folder refers to the folder that both pipelines.py and settings.py are in
+# ITEM_PIPELINES = {
+#     'universities.pipelines.S3Pipeline': 1,
+# }
+# ELASTICSEARCH_SERVER = '127.0.0.1'
+# ELASTICSEARCH_PORT = 9200
+# ELASTICSEARCH_INDEX = 'universities'
+# ELASTICSEARCH_TYPE = 'university'
+# ELASTICSEARCH_UNIQ_KEY = 'url'
